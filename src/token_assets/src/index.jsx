@@ -17,10 +17,14 @@ const init = async () => {
       }
     });
   }
-  
-  ReactDOM.render(<App />, document.getElementById("root"));
 }
 
+async function handleAuthenticated(authClient) {
+  const identity = await authClient.getIdentity();
+  const userPrincipal = identity._principal.toString();
+  console.log(userPrincipal);
+  ReactDOM.render(<App loggInPrincipal={userPrincipal}/>, document.getElementById("root"));
+}
 init();
 
 

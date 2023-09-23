@@ -3,7 +3,7 @@ import { token } from '../../../declarations/token';
 import { AuthClient } from "../../../../node_modules/@dfinity/auth-client/lib/cjs/index";
 import { canisterId, createActor } from "../../../declarations/token/index";
 
-function Faucet() {
+function Faucet(props) {
 
   const [isDisabled, setDisabled] = useState(false);
   const [buttonText, setButtonText] =useState("Gimme gimme");
@@ -32,7 +32,7 @@ function Faucet() {
         </span>
         Faucet
       </h2>
-      <label>Get your free DVedanti tokens here! Claim 10,000 DANG token to your account.</label>
+      <label>Get your free DVedanti tokens here! Claim 10,000 DANG token to {props.userPrincipal}.</label>
       <p className="trade-buttons">
         <button id="btn-payout" onClick={handleClick} disabled={isDisabled}>
           {buttonText}
