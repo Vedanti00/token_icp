@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { token } from "../../../declarations/token";
-import Principal from "@difinity/principal";
+import { Principal } from "@dfinity/principal";
 
 function Transfer() {
 
